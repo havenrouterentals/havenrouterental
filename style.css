@@ -2125,3 +2125,278 @@ footer {
     }
 
 }
+/* =========================
+   HERO BACKGROUND IMAGE
+========================= */
+
+.hero {
+    width: 100%;
+    min-height: 750px;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)),
+        url("images/imageshero.jpg");
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    max-width: 850px;
+    color: #fff;
+}
+
+.hero-content h1 {
+    color: #d4af37;
+    font-size: 64px;
+    line-height: 1.05;
+    margin: 0 0 35px;
+    letter-spacing: 2px;
+}
+
+.hero-content h2 {
+    color: #fff;
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 0 0 25px;
+}
+
+.hero-content p {
+    color: #fff;
+    font-size: 19px;
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 650px;
+        padding: 60px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 43px;
+    }
+
+    .hero-content h2 {
+        font-size: 34px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+
+    /* MOBILE NAVIGATION */
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+/* =========================
+   ABOUT THE SITE
+========================= */
+
+.about-site {
+    padding: 90px 20px;
+    background: #111;
+    text-align: center;
+}
+
+.about-site-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-label {
+    color: #d4af37;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 0 0 15px;
+}
+
+.about-site h2 {
+    color: #fff;
+    font-size: 42px;
+    margin: 0 0 20px;
+}
+
+.about-site-content > p:not(.about-label) {
+    max-width: 750px;
+    margin: 0 auto 50px;
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.about-site-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.about-site-card {
+    padding: 30px 20px;
+    border: 1px solid #333;
+    border-radius: 12px;
+}
+
+.about-site-card h3 {
+    color: #d4af37;
+    margin: 0 0 12px;
+    font-size: 20px;
+}
+
+.about-site-card p {
+    color: #bbb;
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+
+    .about-site {
+        padding: 65px 20px;
+    }
+
+    .about-site h2 {
+        font-size: 32px;
+    }
+
+    .about-site-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+}
+/* =========================
+   CLIENT REVIEWS
+========================= */
+
+.reviews-section {
+    padding: 90px 20px;
+    background: #f7f7f7;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.reviews-label {
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0 0 12px;
+}
+
+.reviews-header h2 {
+    font-size: 40px;
+    color: #111;
+    margin: 0 0 20px;
+}
+
+.overall-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.stars,
+.review-stars {
+    color: #d4af37;
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+
+.overall-rating strong {
+    font-size: 20px;
+    color: #111;
+}
+
+.overall-rating span {
+    color: #777;
+}
+
+.reviews-grid {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.review-card {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.review-stars {
+    margin-bottom: 15px;
+}
+
+.review-card p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+    margin: 0 0 22px;
+}
+
+.review-card h4 {
+    margin: 0 0 5px;
+    color: #111;
+    font-size: 16px;
+}
+
+.review-card span {
+    color: #888;
+    font-size: 13px;
+}
+
+@media (max-width: 800px) {
+
+    .reviews-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .reviews-section {
+        padding: 65px 15px;
+    }
+
+    .reviews-header h2 {
+        font-size: 30px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

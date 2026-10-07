@@ -2,30 +2,40 @@ const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
 if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
 
-        if (navLinks.classList.contains("active")) {
+    menuBtn.addEventListener("click", function () {
+
+        navLinks.classList.toggle("show");
+
+        if (navLinks.classList.contains("show")) {
             menuBtn.textContent = "✕";
         } else {
             menuBtn.textContent = "☰";
         }
+
     });
 
-    const links = navLinks.querySelectorAll("a");
+    navLinks.querySelectorAll("a").forEach(function (link) {
 
-    links.forEach(function (link) {
         link.addEventListener("click", function () {
-            navLinks.classList.remove("active");
+
+            navLinks.classList.remove("show");
             menuBtn.textContent = "☰";
+
         });
+
     });
 }
 
 
+/* =========================
+   SEARCH
+========================= */
+
 const searchBtn = document.getElementById("searchBtn");
 
 if (searchBtn) {
+
     searchBtn.addEventListener("click", function () {
 
         const locationInput = document.getElementById("location");
@@ -55,9 +65,15 @@ if (searchBtn) {
         if (type === "vacation") {
             window.location.href = "vacation.html";
         }
+
     });
+
 }
 
+
+/* =========================
+   PROPERTY PHOTO LIGHTBOX
+========================= */
 
 const galleryImages = document.querySelectorAll(
     ".photos-grid img, .gallery-main img, .gallery-side img"
@@ -68,6 +84,7 @@ if (galleryImages.length > 0) {
     let currentImage = 0;
 
     const lightbox = document.createElement("div");
+
     lightbox.className = "lightbox";
 
     lightbox.innerHTML = `
@@ -116,6 +133,7 @@ if (galleryImages.length > 0) {
             lightbox.classList.add("active");
 
             document.body.style.overflow = "hidden";
+
         });
 
     });
@@ -126,18 +144,21 @@ if (galleryImages.length > 0) {
         lightbox.classList.remove("active");
 
         document.body.style.overflow = "";
+
     });
 
 
     previousButton.addEventListener("click", function () {
 
         showImage(currentImage - 1);
+
     });
 
 
     nextButton.addEventListener("click", function () {
 
         showImage(currentImage + 1);
+
     });
 
 
@@ -148,7 +169,9 @@ if (galleryImages.length > 0) {
             lightbox.classList.remove("active");
 
             document.body.style.overflow = "";
+
         }
+
     });
 
 
@@ -163,18 +186,29 @@ if (galleryImages.length > 0) {
             lightbox.classList.remove("active");
 
             document.body.style.overflow = "";
+
         }
 
         if (event.key === "ArrowLeft") {
+
             showImage(currentImage - 1);
+
         }
 
         if (event.key === "ArrowRight") {
+
             showImage(currentImage + 1);
+
         }
+
     });
+
 }
 
+
+/* =========================
+   NAVBAR SCROLL
+========================= */
 
 window.addEventListener("scroll", function () {
 
@@ -185,30 +219,13 @@ window.addEventListener("scroll", function () {
     }
 
     if (window.scrollY > 40) {
+
         navbar.classList.add("scrolled");
+
     } else {
+
         navbar.classList.remove("scrolled");
+
     }
-    const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
 
-if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-
-        if (navLinks.classList.contains("show")) {
-            menuBtn.textContent = "✕";
-        } else {
-            menuBtn.textContent = "☰";
-        }
-    });
-
-    navLinks.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("show");
-            menuBtn.textContent = "☰";
-        });
-    });
-}
-}
-);
+});
